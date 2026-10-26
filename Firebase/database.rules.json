@@ -1,0 +1,38 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "latest": {
+      "home-in": {
+        ".read": "auth != null && (auth.uid === 'OWNER_UID_PLACEHOLDER' || root.child('viewers').child(auth.uid).isString())",
+        ".write": "auth != null && auth.uid === 'SENSOR_UID_PLACEHOLDER'"
+      },
+      "portable": {
+        ".read": "auth != null && (auth.uid === 'OWNER_UID_PLACEHOLDER' || root.child('viewers').child(auth.uid).isString())",
+        ".write": "auth != null && auth.uid === 'SENSOR_UID_PLACEHOLDER'"
+      }
+    },
+    "readings": {
+      "home-in": {
+        ".read": "auth != null && (auth.uid === 'OWNER_UID_PLACEHOLDER' || root.child('viewers').child(auth.uid).isString())",
+        "$readingId": {
+          ".write": "auth != null && auth.uid === 'SENSOR_UID_PLACEHOLDER' && !data.exists()"
+        }
+      },
+      "portable": {
+        ".read": "auth != null && (auth.uid === 'OWNER_UID_PLACEHOLDER' || root.child('viewers').child(auth.uid).isString())",
+        "$readingId": {
+          ".write": "auth != null && auth.uid === 'SENSOR_UID_PLACEHOLDER' && !data.exists()"
+        }
+      }
+    },
+    "viewers": {
+      ".read": "auth != null && auth.uid === 'OWNER_UID_PLACEHOLDER'",
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        ".write": "auth != null && auth.uid === 'OWNER_UID_PLACEHOLDER' && $uid !== 'OWNER_UID_PLACEHOLDER' && $uid !== 'SENSOR_UID_PLACEHOLDER'",
+        ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 40"
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+# Secrets never go in the repo.
+# Copy SchoolAir/Secrets.example.plist to SchoolAir/Secrets.plist and fill it in locally.
+# Download GoogleService-Info.plist from your own Firebase project into SchoolAir/.
+**/Secrets.plist
+**/GoogleService-Info.plist
+.env
+.env.*
+
+# Xcode
+xcuserdata/
+*.xcuserstate
+*.xcuserdatad/
+DerivedData/
+build/
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# Firebase tooling
+Firebase/node_modules/
+Firebase/.firebase/
+Firebase/*-debug.log
+firebase-debug.log
+.firebaserc
+
+# macOS
+.DS_Store

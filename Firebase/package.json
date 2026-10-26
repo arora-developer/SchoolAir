@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "@firebase/rules-unit-testing": "^6.0.0",
+    "firebase": "^13.0.0",
+    "firebase-tools": "^15.34.0"
+  },
+  "private": true,
+  "scripts": {
+    "test": "firebase emulators:exec --project demo-schoolair-family --only database \"node security-tests.cjs\""
+  }
+}
