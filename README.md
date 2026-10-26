@@ -1,8 +1,6 @@
 # School Air
 
-Tells the people who run a room whether its air is OK and which fix fits — more fresh air, more
-filtration, or fewer people — by reading CO₂ inside and particles outside and flagging when the two
-disagree.
+Tells the people who run a room whether its air is OK by reading CO₂ inside and particles outside.
 
 Congressional App Challenge 2026, IN-08.
 
